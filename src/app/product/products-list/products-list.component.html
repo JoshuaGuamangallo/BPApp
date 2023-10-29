@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="actions">
+            <div class="column-6 search">
+                <input class="form-input" type="text" [(ngModel)]="textoBusqueda" #inputBusqueda placeholder="Search...">
+            </div>
+            <div class="column-6 btn">
+                <button class="form-button-yellow" routerLink="create-product/new">Agregar</button>
+            </div>
+        </div>
+        <div class="column-12">
+            <div class="card">
+                <div class="card-body">
+                </div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Logo</th>
+                                    <th>Nombre de producto</th>
+                                    <th>Descripción</th>
+                                    <th>Fecha de liberación</th>
+                                    <th>Fecha de reestructuración</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of products | search:textoBusqueda | pagination:page, let i = index ">
+                                    <td>
+                                        <img class="logo" [src]="item.logo" alt="tarjeta de credito">
+                                    </td>
+                                    <td>{{item.name}} </td>
+                                    <td>{{item.description}} </td>
+                                    <td>{{item.date_release | date: 'dd-MM-YYYY'}} </td>
+                                    <td>{{item.date_revision | date: 'dd-MM-YYYY'}} </td>
+                                    <td >
+                                        <div class="dropdown" id="{{i}}" (click)="toggleDropdown(i)">
+                                            <i class="dropdown-toggle"><img width="15" class="icon-options" height="15"
+                                                    src="https://img.icons8.com/external-basicons-solid-edtgraphics/50/external-Options-cellphone-ui-basicons-solid-edtgraphics-2.png"
+                                                    alt="external-Options-cellphone-ui-basicons-solid-edtgraphics-2" /></i>
+                                            <div class="dropdown-content" *ngIf="openDropdownIndex === i">
+                                                <a [routerLink]="['create-product', item.id]">Editar</a>
+                                                <a (click)="deleteProduct(item.id)">Eliminar</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <div class="column-6 results">
+                            {{totalProducts}} Resultados
+                        </div>
+                        <div class="column-6 index">
+                            <app-pagination [total_products]="totalProducts" (change)="controlPagination($event)">
+                            </app-pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

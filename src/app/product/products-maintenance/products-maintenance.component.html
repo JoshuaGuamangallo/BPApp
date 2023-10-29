@@ -1,0 +1,124 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <h2>Formulario de registro</h2>
+            </div>
+            <div class="card-body">
+
+                    <form [formGroup]="productForm" (ngSubmit)="saveForm()">
+                        <div class="row ">
+                            <div class="data">
+                                <div class="column-12">
+                                    <div  class="column-6" >
+                                        <div class="form-group">
+                                            <label class="form-label" [ngClass]="{'disabled': activatePutProduct} "for="id">ID &nbsp;</label>
+                                            <input class="form-input"  (keyup)="verificationIdProduct()"  [ngClass]="{'form-input-error': productForm.get('id')!.invalid && (productForm.get('id')!.dirty || productForm.get('id')!.touched), 'disabled': activatePutProduct}" type="text" id="id" formControlName="id" minlength="3" maxlength="10">
+                                            <div class="error-message"
+                                                *ngIf="productForm.get('id')!.hasError('required') && productForm.get('id')!.touched">
+                                                Este campo es requerido
+                                            </div>
+                                            <div class="error-message" *ngIf="productForm.get('id')!.hasError('minlength')">
+                                                Este campo debe ser mínimo a 3 caracteres
+                                            </div>
+                                            <div class="error-message" *ngIf="productForm.get('id')!.hasError('maxlength')">
+                                                Este campo debe ser máximo a 10 caracteres
+                                            </div>
+                                            <div class="error-message" *ngIf="productForm.get('id')!.hasError('notUnique')">
+                                                ID no valido
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="column-6">
+                                        <div class="form-group">
+                                            <label class="form-label"  for="name">Nombre</label>
+                                            <input class="form-input" type="text" id="name" formControlName="name"  [ngClass]="{'form-input-error': productForm.get('name')!.invalid && (productForm.get('name')!.dirty || productForm.get('name')!.touched)}" minlength="5" maxlength="100">
+                                            <div class="error-message"
+                                                *ngIf="productForm.get('name')!.hasError('required') && productForm.get('name')!.touched">
+                                                Este campo es requerido
+                                            </div>
+                                            <div class="error-message" *ngIf="productForm.get('name')!.hasError('minlength')">
+                                                Este campo debe ser mínimo a 5 caracteres
+                                            </div>
+                                            <div class="error-message" *ngIf="productForm.get('name')!.hasError('maxlength')">
+                                                Este campo debe ser máximo a 100 caracteres
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="data">
+                                <div class="column-12">
+                                    <div  class="column-6" >
+                                        <div class="form-group">
+                                            <label class="form-label" for="description">Descripción</label>
+                                            <input class="form-input" type="text" id="description" formControlName="description" [ngClass]="{'form-input-error': productForm.get('description')!.invalid && (productForm.get('description')!.dirty || productForm.get('description')!.touched)}" minlength="10" maxlength="200">
+                                            <div class="error-message"
+                                                *ngIf="productForm.get('description')!.hasError('required') && productForm.get('description')!.touched">
+                                                Este campo es requerido
+                                            </div>
+                                            <div class="error-message" *ngIf="productForm.get('description')!.hasError('minlength')">
+                                                Este campo debe ser mínimo a 10 caracteres
+                                            </div>
+                                            <div class="error-message" *ngIf="productForm.get('description')!.hasError('maxlength')">
+                                                Este campo debe ser máximo a 200 caracteres
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="column-6">
+                                        <div class="form-group">
+                                            <label class="form-label"  for="logo">Logo</label>
+                                            <input class="form-input" type="text" id="logo" formControlName="logo" [ngClass]="{'form-input-error': productForm.get('logo')!.invalid && productForm.get('logo')!.touched}">
+                                            <div class="error-message"
+                                                *ngIf="productForm.get('logo')!.hasError('required') && productForm.get('logo')!.touched">
+                                                Este campo es requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="column-12">
+                                    <div  class="column-6" >
+                                        <div class="form-group">
+                                            <label class="form-label" for="date_release">Fecha de Liberación</label>
+                                            <input class="form-input" (change)="addOneYearDateRevision(); currentDateReleaseValidator()" type="date" id="date_release" formControlName="date_release" [ngClass]="{'form-input-error': productForm.get('date_release')!.invalid && (productForm.get('date_release')!.dirty || productForm.get('date_release')!.touched)}">
+                                            <div class="error-message"
+                                                *ngIf="productForm.get('date_release')!.hasError('required') && productForm.get('date_release')!.touched && productForm.get('date_release')!.hasError('currentDate')">
+                                                Este campo es requerido
+                                            </div>
+                                            <div class="error-message"
+                                                *ngIf="productForm.get('date_release')!.hasError('currentDate')">
+                                                El campo requiere fecha actual o mayor
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="column-6">
+                                        <div class="form-group ">
+                                            <label class="form-label disabled"  for="date_revision">Fecha de Revisión</label>
+                                            <input class="form-input disabled" type="date" id="date_revision" formControlName="date_revision" [ngClass]="{'form-input-error': productForm.get('date_revision')!.invalid && (productForm.get('date_revision')!.dirty || productForm.get('date_revision')!.touched)}">
+                                            <div class="error-message"
+                                                *ngIf="productForm.get('date_revision')!.hasError('required') && productForm.get('date_revision')!.touched">
+                                                Este campo es requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="btn">
+                                <div class="column-6 btn-reset">
+                                    <button class="form-button-gray" type="button" (click)="resetForm()">Reiniciar</button>
+                                </div>
+                                <div class="column-6 btn-save">
+                                    <button class="form-button-yellow" type="submit" [ngClass]="{'disabled': productForm.invalid}"[disabled]="productForm.invalid">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+            </div>
+        </div>
+    </div>
+</div>

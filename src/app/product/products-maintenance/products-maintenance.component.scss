@@ -1,0 +1,56 @@
+.container{
+    padding-top: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+input{
+    width: 85%;
+
+}
+
+
+
+.form-container{
+    width: 100%;
+    position: relative;
+    left: 15px;
+}
+
+
+.form-group{
+    margin-bottom: 25px;
+}
+
+
+.btn{
+    text-align: center;
+}
+
+.btn-save{
+    position: relative;
+    top:15px;
+    right: 75px;
+}
+
+.btn-reset{
+    position: relative;
+    top:15px;
+    left: 60px;
+}
+
+form{
+    width: 100%;
+}
+
+.card-body{
+    padding-bottom: 50px;
+}
+
+input[type="date"] {
+    font-family: sans-serif;
+}
+
+.disabled{
+    opacity: 0.5;
+}

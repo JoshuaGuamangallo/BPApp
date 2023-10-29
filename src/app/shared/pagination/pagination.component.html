@@ -1,0 +1,6 @@
+<div  class="select-container">
+    <select class="custom-select" size="1">
+        <option value="0" >{{5}}</option>
+        <option *ngFor="let item of options; let i = index" [value]="i + 5">{{item}}</option>
+    </select>
+</div>

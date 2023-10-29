@@ -1,1 +1,128 @@
-/* You can add global styles to this file, and also import other style files */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+}
+
+.column-6 {
+    float: left;
+    width: 50%;
+}
+
+.column-12 {
+    float: left;
+    width: 100%;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+.form-input {
+    font-size: 14px;
+    color: black;
+    border: 1px solid black;
+    padding: 13px;
+    border-radius: 3px;
+}
+
+.form-button-yellow{
+    font-size: 14px;
+    color: #0F265C;
+    font-weight: bold;
+    text-align: center !important;
+    border-radius: 3px;
+    border: 1px solid #FFDE00;
+    padding: 16px 20px 16px 20px;
+    background-color: #FFDE00;
+}
+
+.form-button-yellow:hover {
+    cursor: pointer;
+    background-color: rgb(248, 215, 0); 
+}
+
+.form-button-gray{
+    font-size: 14px;
+    color: #0F265C;
+    font-weight: bold;
+    text-align: center !important;
+    border-radius: 3px;
+    border: 1px solid #0f265c17;
+    padding: 16px 20px 16px 20px;
+    background-color: #0f265c17;
+}
+
+.form-button-gray:hover {
+    cursor: pointer;
+    background-color: #0f265c21; 
+    border: 1px solid #0f265c21;
+}
+
+.form-input-error{
+    font-size: 14px;
+    color: black;
+    border: 1px solid red;
+    padding: 13px;
+    border-radius: 3px;
+}
+
+.error-message{
+    color: red;
+    padding-top: 8px;
+    font-size: 12px;
+}
+
+.card {
+    flex: 1 1 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card-body {
+    padding: 0px 15px;
+}
+
+.card-header {
+    color: black;
+    padding: 0px;
+    border-bottom: 1px solid black;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.disabled{
+    opacity: 0.5;
+}
+
+input:focus{
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track del scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color del thumb (el indicador) del scrollbar */
+    border-radius: 5px; /* Borde redondeado para el thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb al pasar el ratón sobre él */
+}
+
+
+html, body { height: 100%; background-color: #f1f1f1;}
+body { margin: 0; font-family: sans-serif; }
+
