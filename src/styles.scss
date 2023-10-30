@@ -1,3 +1,4 @@
+//Columns styles
 .row:after {
     content: "";
     display: table;
@@ -15,6 +16,7 @@
     width: 100%;
 }
 
+//Form styles
 .form-label {
     font-size: 14px;
     font-weight: bold;
@@ -63,6 +65,12 @@
     border: 1px solid #0f265c21;
 }
 
+input:focus{
+    outline: none;
+}
+
+//Form error styles
+
 .form-input-error{
     font-size: 14px;
     color: black;
@@ -77,6 +85,7 @@
     font-size: 12px;
 }
 
+//card styles
 .card {
     flex: 1 1 auto;
     border: 1px solid #ccc;
@@ -97,32 +106,30 @@
     text-align: center;
 }
 
+//disable form
 .disabled{
     opacity: 0.5;
 }
 
-input:focus{
-    outline: none;
-}
-
+//scroll table
 ::-webkit-scrollbar {
-    width: 10px; /* Ancho del scrollbar */
+    width: 10px; 
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color de fondo del track del scrollbar */
+    background: #f1f1f1; 
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888; /* Color del thumb (el indicador) del scrollbar */
-    border-radius: 5px; /* Borde redondeado para el thumb */
+    background: #888; 
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color del thumb al pasar el ratón sobre él */
+    background: #555;
 }
 
-
+//atyle global
 html, body { height: 100%; background-color: #f1f1f1;}
 body { margin: 0; font-family: sans-serif; }
 

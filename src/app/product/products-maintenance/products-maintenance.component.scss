@@ -1,15 +1,16 @@
+//style container page
 .container{
     padding-top: 3em;
     display: flex;
     justify-content: center;
     align-items: center; 
 }
-input{
-    width: 85%;
 
+
+//style form 
+form{
+    width: 100%;
 }
-
-
 
 .form-container{
     width: 100%;
@@ -17,12 +18,15 @@ input{
     left: 15px;
 }
 
+input{
+    width: 85%;
+}
 
 .form-group{
     margin-bottom: 25px;
 }
 
-
+//style buttons
 .btn{
     text-align: center;
 }
@@ -39,18 +43,17 @@ input{
     left: 60px;
 }
 
-form{
-    width: 100%;
-}
-
+//style card 
 .card-body{
     padding-bottom: 50px;
 }
 
+//date font
 input[type="date"] {
     font-family: sans-serif;
 }
 
+//disable form
 .disabled{
     opacity: 0.5;
 }

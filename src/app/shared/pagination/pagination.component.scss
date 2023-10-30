@@ -1,17 +1,17 @@
+//style pagination
 select{
-    padding: 3px 15px 3px 15px;  
+    padding: 3px 15px 3px 13px;  
 }
 
 .select-container {
-    width: 200px; /* Establece el ancho deseado */
-    overflow: hidden; /* Oculta el desbordamiento */
+    width: 70px; 
+    overflow: hidden; 
     position: relative;
 }
 
-/* Estilo para el select */
 .custom-select {
     width: 100%;
-    padding: 10px;
+    padding: 3px 15px 3px 13px;
     cursor: pointer;
     background-color: #f9f9f9;
 }

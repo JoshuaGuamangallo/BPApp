@@ -1,35 +1,14 @@
+//style container page
 .container{
     padding-top: 3em;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
+    justify-content: center;
     align-items: center; 
     position: relative;
 }
 
-.actions{
-    padding-bottom: 70px;
-}
 
-td{
-    padding: 1px 25px; /* Relleno interno de las celdas */
-    margin: 5px; /* Margen entre las celdas */
-
-}
-th{
-    padding: 1px 25px; /* Relleno interno de las celdas */
-    margin: 5px; /* Margen entre las celdas */
-}
-
-.search{
-    display: flex;
-    justify-content: flex-start;
-}
-
-.btn{
-    display: flex;
-    justify-content: flex-end;
-}
-
+//style table
 .table-container{
     max-width: 800px;
     height: 310px;
@@ -67,6 +46,34 @@ table tbody tr {
     white-space: nowrap;
 }
 
+//styles body table
+.actions{
+    padding-bottom: 70px;
+}
+
+td{
+    padding: 1px 25px;
+    margin: 5px; 
+
+}
+th{
+    padding: 1px 25px; 
+    margin: 5px;
+}
+
+//style header table 
+
+.search{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+//style image
 .logo{
     width: 45px;
     height: 45px;
@@ -80,10 +87,17 @@ table tbody tr {
     object-fit: cover;
 }
 
+//style pagination
 .pagination{
     padding: 20px 0px 45px 0px;
 }
 
+select{
+    padding: 3px 15px 3px 15px;  
+}
+
+
+//style total results
 .results{
     display: flex;
     justify-content: flex-start;
@@ -94,13 +108,11 @@ table tbody tr {
     justify-content: flex-end;
 }
 
-select{
-    padding: 3px 15px 3px 15px;  
-}
-
+//style options
 .icon-options{
     rotate: 90deg;
 }
+
 
 .dropdown-container {
     position: relative;
